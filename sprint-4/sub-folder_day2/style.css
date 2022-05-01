@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 20px;
+    /* box-sizing: border-box; */
+    text-decoration: none;
+    color: black;
+
+}
+
+
+
+
+.navBar{
+
+    background-color: black;
+
+    color: white;
+    width: 100%;
+    height: auto;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-evenly ;
+   
+   
+
+}
+
+.navBar > div > a{
+    color: white;
+}
+
+.frontEnd {
+    margin: 0 0.5rem;
+    padding: 0 0.5rem;
+    height: 1.5rem;
+    background-color: hotpink;
+    
+}
+ .backEnd{
+    margin: 0 0.5rem;
+    padding: 0 0.5rem;
+    height: 1.5rem;
+ 
+    
+    background-color: hotpink;
+    
+    
+}
+
+
+h1{
+    text-align: center;
+    color: rgb(54, 53, 53);
+    margin: 0.5rem 0.25rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+#formId{
+
+    width: 50%;
+    margin: auto;
+    color: chocolate;
+    display: flex;
+    flex-direction: column;
+}
+#formId > input{
+    margin: 0.25rem;
+    padding: 0.25rem;
+    border-radius: 5px;
+    border: 2px solid lightgrey;
+    color: rgb(143, 139, 139);    
+    /* background-color: transparent; */
+}
+
+#formId > input:hover , #formId > input:active {
+    border: 2px solid rgb(29 ,161 ,242);
+}
+
+.headingCssRed{
+    background-color: rgb(236, 74, 74);
+    border: 2px solid rgb(243, 129, 129);
+    border-radius: 3px;
+    padding: 0.5rem;
+
+}
+.headingCssGreen{
+    background-color: rgb(109, 219, 142);
+    border: 2px solid rgb(87, 194, 87);
+    border-radius: 3px;
+    padding: 0.5rem;
+  
+}
+
+#box{
+
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+
+
+
+}
+
+.container{
+
+    width: 80%;
+    margin: auto;
+}
+
+.container > h1{
+
+    font-size: 30px;
+    margin: 1.5rem 1rem 2rem;
+}
+
+.boxCard{
+    text-align: center;
+    border-radius: 5px;
+}
+
+.boxCard > .cradImg{
+
+    width: 100%;
+    margin-bottom: 0.75rem;
+
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.boxCard > p{
+    margin: 0.5rem 0;
+    font-size: large;
+}
+
+.boxCard > .cradLogo{
+
+    width: 80%;
+    margin: auto;
+}

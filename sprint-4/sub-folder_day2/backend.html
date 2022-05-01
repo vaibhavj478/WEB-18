@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Backend</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="navBar">
+      <div class="frontEnd"><a href="frontend.html" class="">Frontend</a></div>
+      <div class="backEnd"><a href="backend.html" class="">Backend</a></div>
+    </div>
+    <div class="container">
+      <h1>Masai</h1>
+
+      <form action="" id="formId">
+        <h1 id="formh1">Please Fill All The Detail</h1>
+        <input type="text" id="formImg" placeholder="Image URL" />
+        <input type="text" id="formName" placeholder="Name" />
+        <input type="text" id="formPosition" placeholder="Designation" />
+        <input type="text" id="formLogo" placeholder="Company Logo" />
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+
+  <script>
+
+//  data to fill
+
+// https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg
+
+// Vijay Shekhar Sharma
+
+// Founder & CEO
+// https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg
+
+    const investorData = JSON.parse(localStorage.getItem("investorData")) || [];
+
+    document.querySelector("#formId").addEventListener("submit", myFunction);
+
+    function myFunction() {
+      event.preventDefault();
+
+      let heading = document.querySelector("#formId > h1");
+
+      let obj = {};
+      let formImg = document.querySelector("#formImg").value;
+      let formName = document.querySelector("#formName").value;
+      let formPosition = document.querySelector("#formPosition").value;
+      let formLogo = document.querySelector("#formLogo").value;
+
+      if (
+        formImg === "" ||
+        formName === "" ||
+        formPosition === "" ||
+        formLogo === ""
+      ) {
+        heading.innerText = `Alert() ! Fill All The Detail`;
+        heading.setAttribute("class", "headingCssRed");
+
+        return;
+      } else {
+        obj = {
+          Img: formImg,
+          Name: formName,
+          Role: formPosition,
+          Logo: formLogo,
+        };
+
+        heading.innerText = `Successfully ! Submited`;
+        heading.setAttribute("class", "headingCssGreen");
+
+        investorData.push(obj);
+
+        localStorage.setItem("investorData", JSON.stringify(investorData));
+
+
+         document.querySelector("#formImg").value=""
+      document.querySelector("#formName").value=""
+       document.querySelector("#formPosition").value= ""
+      document.querySelector("#formLogo").value=""
+
+      }
+    }
+  </script>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+    
+    <div class="navBar"> 
+
+        <div class="frontEnd"> <a href="frontend.html" class="">Frontend</a>  </div>
+        <div class="backEnd">  <a href="backend.html" class="">Backend</a> </div>
+
+    </div>
+
+
+    <div class="container">
+
+        <h1>Masai Investor</h1>
+
+        <div class="box" id="box">
+
+        </div>
+
+
+    </div>
+
+</body>
+
+<script>
+
+
+    let investorData =  JSON.parse(localStorage.getItem("investorData")) || []; 
+
+    console.log(investorData)
+
+
+    investorData.map(function(el){
+
+        let card = document.createElement("div");
+
+        card.setAttribute("class","boxCard");
+
+        let img = document.createElement("img");
+
+        img.setAttribute("class","cradImg");
+
+        img.setAttribute("src",el.Img);
+
+        let name = document.createElement("h3");
+
+        name.innerText= el.Name;
+
+        let role = document.createElement("p");
+
+        role.innerText= el.Role;
+    
+        let logo = document.createElement("img");
+
+        logo.setAttribute("class","cradLogo");
+
+        logo.setAttribute("src",el.Logo);
+
+        card.append(img,name,role,logo);
+
+        document.querySelector("#box").append(card);
+
+    });
+
+    
+
+
+
+</script>
+</html>
