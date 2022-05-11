@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+
+    /* box-sizing: border-box;
+     */
+}
+
+body{
+    background-color: pink;
+}
+
+.container{
+
+    border: 1px solid white;
+    width: 70%;
+    margin: 2rem auto;
+    border: 1px solid white;
+    overflow: hidden;
+    border-radius: 3px;
+    padding: 1rem;
+}
+
+form{
+    width: 100%;
+    margin: 2rem auto;
+    /* border: 1px solid white; */
+    
+}
+
+input{
+    display: block;
+    margin:  1rem auto;
+    font-size: 20px;
+    border-radius: 3px;
+    border: 1px solid white;
+    padding: 0.25rem 0.2rem;
+    
+}
+
+
+.container > h3{
+
+    font-size: large;
+   color: black;
+
+    /* border: 1px solid red; */
+    /* display: inline-block; */
+    width: 50vw;
+text-align: center;
+    margin: 0 auto 0.5rem;
+
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+font-weight: 400;
+
+
+}
+
+#register{
+
+    float: left;
+    margin: 0.5rem 0 0.5rem 2rem ;
+    padding: 0.5rem 0.75rem;
+    background-color: rgb(26, 202, 26);
+    color: white;
+    text-decoration: none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 3px;
+    font-weight: 400;
+
+}
+
+#forget{
+
+    float: right;
+    margin: 0.5rem 2rem 0.5rem 0;
+    padding: 0.5rem 0.75rem;
+    background-color: rgb(	29 161 242);
+    color: white;
+    text-decoration: none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 3px;
+    font-weight: 400;
+}

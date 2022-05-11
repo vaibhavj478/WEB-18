@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/signin.css" />
+  <title>Sign in</title>
+</head>
+
+<body>
+  <div class="container">
+
+ 
+  <form action="">
+    <input id="mail" type="text" placeholder="email" />
+    <input id="password" type="text" placeholder="password" />
+
+    <input type="submit" value="submit" />
+  </form>
+  <h3>NEW USER</h3>
+  <a id="register" href="/signup.html">Register</a>
+  <a id="forget" href="/signup.html">Forget password</a>
+
+  </div>
+</body>
+
+<script>
+  const form = document.querySelector("form");
+
+  let userData = JSON.parse(localStorage.getItem("userData"));
+
+  let signinData = JSON.parse(localStorage.getItem("signinData")) || [];
+  // null
+
+
+
+
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    if (form.mail.value === "" || form.password.value == "") {
+      alert("invalid credentials");
+
+      return;
+    }
+
+    var data = {
+      email: form.mail.value,
+      password: form.password.value,
+    };
+
+    userData.forEach(function (el) {
+      console.log(el);
+
+
+      if (el.email === data.email && el.password === data.password) {
+
+        alert("login Successfully")
+        signinData.push(el);
+
+        localStorage.setItem("signinData", JSON.stringify(signinData));
+
+        window.location.href = "index.html";
+
+
+
+      }
+
+    });
+
+
+
+
+
+
+
+
+    if (signinData.length === 0) {
+
+      alert("user not fount ");
+      form.mail.value = ""
+      form.password.value = ""
+    }
+
+
+
+  });
+</script>
+
+</html>

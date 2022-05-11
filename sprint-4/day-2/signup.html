@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup.css">
+    <title>Sign UP PAge</title>
+
+</head>
+<style>
+
+</style>
+<body>
+    
+
+    <form action="">
+
+        <input id="username" type="text" placeholder="username">
+        <input  id="mail" type="text" placeholder="email">
+        <input id="password" type="text" placeholder="password">
+        <input id="cpassword" type="text" placeholder=" retype-password">
+        <label for="captacha"></label>
+        <!-- <input type="text" name="" id="captacha"> -->
+
+        <input type="submit" value="submit">
+    </form>
+
+</body>
+
+<script>
+    const form = document.querySelector("form")
+
+
+    let userData= JSON.parse(localStorage.getItem("userData")) || [];
+
+    form.addEventListener("submit", function(event){
+
+        event.preventDefault();
+
+        if (  form.username.value ===""||
+             form.mail.value ==="" ||
+             form.password.value ==="" ||
+             form.cpassword.value ==="") {
+            
+                alert("Fill All Credentials");
+
+                return ;
+        }
+
+        if( Number(form.password.value)  === Number( form.cpassword.value )  ){
+            
+            var data={
+            username: form.username.value,
+            email: form.mail.value,
+            password: form.password.value,
+            }
+
+
+            userData.push(data);
+
+            localStorage.setItem("userData",JSON.stringify(userData));
+
+             form.username.value=""
+             form.mail.value =""
+             form.password.value=""
+             form.cpassword.value=""
+
+             window.location.href="signin.html"
+
+        }else{
+
+            alert("invalid credentials");
+
+
+            form.username.value=""
+             form.mail.value =""
+             form.password.value=""
+             form.cpassword.value=""
+            //  form.captacha.value=""
+
+        }
+
+        
+
+
+        
+        
+
+    });
+</script>
+</html>

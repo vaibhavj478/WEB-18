@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mens</title>
+</head>
+<body>
+
+    <div class="nav">
+        <div class="logo">
+        <h1>Masai E-Comm133</h1>
+        </div>
+
+        <div class="text">
+            <h2> <a href="mens.html"></a> Mens</h2>
+            <h2><a href="womes.html"></a> Womens</h2>
+            <h2> <a href="womes.html"></a> Kids</h2>
+        </div>
+        <div class="user">
+            <h2> <a href="signup.html">Sign up</a> </h2>
+            <h2> <a href="signin.html">Sign in</a> </h2>
+        </div>
+    </div>
+    
+</body>
+<script>
+
+    let signinData = JSON.parse(localStorage.getItem("singin"));
+    
+    
+    
+    var user = document.querySelector(".user")
+    
+    if(signinData !== null){
+    
+        user.innerHTML= `
+        <h2> <a href="#"></a>User${signinData.username} </h2>
+                <h2> <a href="cart.html"></a> Cart</h2>
+        `;
+    
+    }
+     
+    </script>
+</html>
